@@ -155,7 +155,6 @@ export default {
         this.$message.success(resp.msg)
         this.$router.push('/home')
       }).catch(err => {
-        debugger
         this.$message.error(err)
       })
     }

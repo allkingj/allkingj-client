@@ -59,7 +59,6 @@ const put = (url, params, level) => ajax(getConfig(url, 'put', false, params, le
 
 // 参数转换
 const param2String = data => {
-  console.log('data', data)
   if (typeof data === 'string') {
     return data
   }
@@ -80,7 +79,6 @@ const param2String = data => {
 
 // 错误回调函数
 const errback = error => {
-  console.log(error)
   return Promise.reject(error.msg) //eslint-disable-line
 }
 // 成功回调函数
@@ -127,8 +125,6 @@ const getConfig = (url, method, isjson, params, level = 0) => {
     }
     // 签名串
     let signstr = crypto.sign(token, timestamp, params)
-    console.log('token', token)
-    console.log('signstr', signstr)
     config_.headers = {
       level,
       timestamp,
